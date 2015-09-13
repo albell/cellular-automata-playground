@@ -1,0 +1,71 @@
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0;
+  padding: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+svg {
+	display: block;
+	max-height: 100%;
+	max-width: 100%;
+}
+
+sup {line-height: 0;}
+
+a,
+button {
+	color: #888;
+	cursor: pointer;
+	text-decoration: none;
+}
+
+a:hover,
+button:hover {
+	color: #000;
+}
+
+button, label {
+	background: #fff;
+	cursor: pointer;
+	font-family:inherit;
+	font-size:inherit;
+	font-style:inherit;
+	font-weight:inherit;
+	-webkit-appearance: none;
+}
+
+/// Remove inner padding and border in Firefox 4+.
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+// Address Firefox 4+ setting `line-height` on `input` using `!important` in the UA stylesheet.
+input {
+  line-height: normal;
+}
+
+p {
+	margin: 0;
+	padding: 0 0 1.3em 0;
+}
+
+.borderless-button {
+	border: 0;
+	padding: 0;
+	text-align: left;
+}
