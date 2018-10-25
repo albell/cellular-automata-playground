@@ -3,10 +3,10 @@
 <head>
 	<meta charset='utf-8'>
 	<title>Cellular Automata Playground</title>
-	<meta name='description' content='Create simple lines, fractal geometries, or non-repeating complex structures, based on a handful of elementary rules.'> 
+	<meta name='description' content='Create simple lines, fractal geometries, or non-repeating complex structures, based on a handful of elementary rules.'>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<script>
-		(function(doc) { 
+		(function(doc) {
 			doc.className = doc.className.replace(/(^|\b)no\-js(\b|$)/, 'js');
 			if (('ontouchstart' in window) || (navigator.msMaxTouchPoints > 0)) {
 				doc.className += ' touch';
@@ -36,7 +36,7 @@
 				<button class="main-menu-button" data-show-menu >
 					<div class="main-menu-button__circle">
 						<svg class="main-menu-button__svg"xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 100 100" xml:space="preserve">
-							<polygon points="53.14,79.39 53.14,53.14 79.39,53.14 79.39,46.86 53.14,46.86 53.14,20.61 46.86,20.61 46.86,46.86 20.61,46.86 
+							<polygon points="53.14,79.39 53.14,53.14 79.39,53.14 79.39,46.86 53.14,46.86 53.14,20.61 46.86,20.61 46.86,46.86 20.61,46.86
 	20.61,53.14 46.86,53.14 46.86,79.39 "/>
 						</svg>
 					</div>
@@ -55,113 +55,113 @@
 
 			<div class="rules-wrapper show-borders">
 				<div class="rule">
-					<div class="rule-inner">
-						<div class="rule-reference-row">
-							<div class="c on"><div class="square"></div></div>
-							<div class="c on"><div class="square"></div></div>
-							<div class="c on"><div class="square"></div></div>
+					<div class="rule__inner">
+						<div class="rule__reference-row">
+							<div class="rule__cell on"><div class="square"></div></div>
+							<div class="rule__cell on"><div class="square"></div></div>
+							<div class="rule__cell on"><div class="square"></div></div>
 						</div>
-						<div class="c rule__box">
+						<div class="rule__box">
 							<input  id="r111" class="rule__checkbox" type="checkbox">
-							<label for="r111" class="rule__label"></label>
+							<label for="r111" class="rule__label square"></label>
 						</div>
 					</div>
 				</div>
 
 				<div class="rule">
-					<div class="rule-inner">
-						<div class="rule-reference-row">
-							<div class="c on"><div class="square"></div></div>
-							<div class="c on"><div class="square"></div></div>
-							<div class="c"><div class="square"></div></div>
+					<div class="rule__inner">
+						<div class="rule__reference-row">
+							<div class="rule__cell on"><div class="square"></div></div>
+							<div class="rule__cell on"><div class="square"></div></div>
+							<div class="rule__cell"><div class="square"></div></div>
 						</div>
-						<div class="c rule__box">
-							<input  id="r110" class="rule__checkbox" type="checkbox">
-							<label for="r110" class="rule__label"></label>
-						</div>
-					</div>
-				</div>
-
-				<div class="rule">
-					<div class="rule-inner">
-						<div class="rule-reference-row">
-							<div class="c on"><div class="square"></div></div>
-							<div class="c"><div class="square"></div></div>
-							<div class="c on"><div class="square"></div></div>
-						</div>
-						<div class="c rule__box">
-							<input  id="r101" class="rule__checkbox" type="checkbox">
-							<label for="r101" class="rule__label"></label>
+						<div class="rule__box">
+							<input id="r110" class="rule__checkbox" type="checkbox">
+							<label for="r110" class="rule__label square"></label>
 						</div>
 					</div>
 				</div>
 
 				<div class="rule">
-					<div class="rule-inner">
-						<div class="rule-reference-row">
-							<div class="c on"><div class="square"></div></div>
-							<div class="c"><div class="square"></div></div>
-							<div class="c"><div class="square"></div></div>
+					<div class="rule__inner">
+						<div class="rule__reference-row">
+							<div class="rule__cell on"><div class="square"></div></div>
+							<div class="rule__cell"><div class="square"></div></div>
+							<div class="rule__cell on"><div class="square"></div></div>
 						</div>
-						<div class="c rule__box">
-							<input  id="r100" class="rule__checkbox" type="checkbox" checked>
-							<label for="r100" class="rule__label"></label>
-						</div>
-					</div>
-				</div>
-
-				<div class="rule">
-					<div class="rule-inner">
-						<div class="rule-reference-row">
-							<div class="c"><div class="square"></div></div>
-							<div class="c on"><div class="square"></div></div>
-							<div class="c on"><div class="square"></div></div>
-						</div>
-						<div class="c rule__box">
-							<input  id="r011" class="rule__checkbox" type="checkbox">
-							<label for="r011" class="rule__label"></label>
+						<div class="rule__box">
+							<input id="r101" class="rule__checkbox" type="checkbox">
+							<label for="r101" class="rule__label square"></label>
 						</div>
 					</div>
 				</div>
 
 				<div class="rule">
-					<div class="rule-inner">
-						<div class="rule-reference-row">
-							<div class="c"><div class="square"></div></div>
-							<div class="c on"><div class="square"></div></div>
-							<div class="c"><div class="square"></div></div>
+					<div class="rule__inner">
+						<div class="rule__reference-row">
+							<div class="rule__cell on"><div class="square"></div></div>
+							<div class="rule__cell"><div class="square"></div></div>
+							<div class="rule__cell"><div class="square"></div></div>
 						</div>
-						<div class="c rule__box">
-							<input  id="r010" class="rule__checkbox" type="checkbox">
-							<label for="r010" class="rule__label"></label>
-						</div>
-					</div>
-				</div>
-
-				<div class="rule">
-					<div class="rule-inner">
-						<div class="rule-reference-row">
-							<div class="c"><div class="square"></div></div>
-							<div class="c"><div class="square"></div></div>
-							<div class="c on"><div class="square"></div></div>
-						</div>
-						<div class="c rule__box">
-							<input  id="r001" class="rule__checkbox" type="checkbox" checked>
-							<label for="r001" class="rule__label"></label>
+						<div class="rule__box">
+							<input id="r100" class="rule__checkbox" type="checkbox" checked>
+							<label for="r100" class="rule__label square"></label>
 						</div>
 					</div>
 				</div>
 
 				<div class="rule">
-					<div class="rule-inner">
-						<div class="rule-reference-row">
-							<div class="c"><div class="square"></div></div>
-							<div class="c"><div class="square"></div></div>
-							<div class="c"><div class="square"></div></div>
+					<div class="rule__inner">
+						<div class="rule__reference-row">
+							<div class="rule__cell"><div class="square"></div></div>
+							<div class="rule__cell on"><div class="square"></div></div>
+							<div class="rule__cell on"><div class="square"></div></div>
 						</div>
-						<div class="c rule__box">
-							<input  id="r000" class="rule__checkbox" type="checkbox">
-							<label for="r000" class="rule__label"></label>
+						<div class="rule__box">
+							<input id="r011" class="rule__checkbox" type="checkbox">
+							<label for="r011" class="rule__label square"></label>
+						</div>
+					</div>
+				</div>
+
+				<div class="rule">
+					<div class="rule__inner">
+						<div class="rule__reference-row">
+							<div class="rule__cell"><div class="square"></div></div>
+							<div class="rule__cell on"><div class="square"></div></div>
+							<div class="rule__cell"><div class="square"></div></div>
+						</div>
+						<div class="rule__box">
+							<input id="r010" class="rule__checkbox" type="checkbox">
+							<label for="r010" class="rule__label square"></label>
+						</div>
+					</div>
+				</div>
+
+				<div class="rule">
+					<div class="rule__inner">
+						<div class="rule__reference-row">
+							<div class="rule__cell"><div class="square"></div></div>
+							<div class="rule__cell"><div class="square"></div></div>
+							<div class="rule__cell on"><div class="square"></div></div>
+						</div>
+						<div class="rule__box">
+							<input id="r001" class="rule__checkbox" type="checkbox" checked>
+							<label for="r001" class="rule__label square"></label>
+						</div>
+					</div>
+				</div>
+
+				<div class="rule">
+					<div class="rule__inner">
+						<div class="rule__reference-row">
+							<div class="rule__cell"><div class="square"></div></div>
+							<div class="rule__cell"><div class="square"></div></div>
+							<div class="rule__cell"><div class="square"></div></div>
+						</div>
+						<div class="rule__box">
+							<input id="r000" class="rule__checkbox" type="checkbox">
+							<label for="r000" class="rule__label square"></label>
 						</div>
 					</div>
 				</div>
@@ -242,10 +242,10 @@
 		<div id="grid-group" class="grid-group limit-grid-width">
 
 			<div id="initial-state" class="initial-state show-borders"
-				><div class="c"><input id="init0" class="init__checkbox" type="checkbox"><label for="init0" class="init__label"></label></div><div class="c"><input id="init1" class="init__checkbox" type="checkbox"><label for="init1" class="init__label"></label></div><div class="c"><input id="init2" class="init__checkbox" type="checkbox"><label for="init2" class="init__label"></label></div><div class="c"><input id="init3" class="init__checkbox" type="checkbox"><label for="init3" class="init__label"></label></div><div class="c"><input id="init4" class="init__checkbox" type="checkbox"><label for="init4" class="init__label"></label></div><div class="c"><input id="init5" class="init__checkbox" type="checkbox"><label for="init5" class="init__label"></label></div><div class="c"><input id="init6" class="init__checkbox" type="checkbox"><label for="init6" class="init__label"></label></div><div class="c"><input id="init7" class="init__checkbox" type="checkbox"><label for="init7" class="init__label"></label></div><div class="c"><input id="init8" class="init__checkbox" type="checkbox"><label for="init8" class="init__label"></label></div><div class="c"><input id="init9" class="init__checkbox" type="checkbox"><label for="init9" class="init__label"></label></div><div class="c"><input id="init10" class="init__checkbox" type="checkbox"><label for="init10" class="init__label"></label></div><div class="c"><input id="init11" class="init__checkbox" type="checkbox"><label for="init11" class="init__label"></label></div><div class="c"><input id="init12" class="init__checkbox" type="checkbox"><label for="init12" class="init__label"></label></div><div class="c"><input id="init13" class="init__checkbox" type="checkbox"><label for="init13" class="init__label"></label></div><div class="c"><input id="init14" class="init__checkbox" type="checkbox"><label for="init14" class="init__label"></label></div><div class="c"><input id="init15" class="init__checkbox" type="checkbox"><label for="init15" class="init__label"></label></div><div class="c"><input id="init16" class="init__checkbox" type="checkbox"><label for="init16" class="init__label"></label></div><div class="c"><input id="init17" class="init__checkbox" type="checkbox"><label for="init17" class="init__label"></label></div><div class="c"><input id="init18" class="init__checkbox" type="checkbox"><label for="init18" class="init__label"></label></div><div class="c"><input id="init19" class="init__checkbox" type="checkbox"><label for="init19" class="init__label"></label></div><div class="c"><input id="init20" class="init__checkbox" type="checkbox"><label for="init20" class="init__label"></label></div><div class="c"><input id="init21" class="init__checkbox" type="checkbox"><label for="init21" class="init__label"></label></div><div class="c"><input id="init22" class="init__checkbox" type="checkbox"><label for="init22" class="init__label"></label></div><div class="c"><input id="init23" class="init__checkbox" type="checkbox"><label for="init23" class="init__label"></label></div><div class="c"><input id="init24" class="init__checkbox" type="checkbox" checked><label for="init24" class="init__label"></label></div><div class="c"><input id="init25" class="init__checkbox" type="checkbox"><label for="init25" class="init__label"></label></div><div class="c"><input id="init26" class="init__checkbox" type="checkbox"><label for="init26" class="init__label"></label></div><div class="c"><input id="init27" class="init__checkbox" type="checkbox"><label for="init27" class="init__label"></label></div><div class="c"><input id="init28" class="init__checkbox" type="checkbox"><label for="init28" class="init__label"></label></div><div class="c"><input id="init29" class="init__checkbox" type="checkbox"><label for="init29" class="init__label"></label></div><div class="c"><input id="init30" class="init__checkbox" type="checkbox"><label for="init30" class="init__label"></label></div><div class="c"><input id="init31" class="init__checkbox" type="checkbox"><label for="init31" class="init__label"></label></div><div class="c"><input id="init32" class="init__checkbox" type="checkbox"><label for="init32" class="init__label"></label></div><div class="c"><input id="init33" class="init__checkbox" type="checkbox"><label for="init33" class="init__label"></label></div><div class="c"><input id="init34" class="init__checkbox" type="checkbox"><label for="init34" class="init__label"></label></div><div class="c"><input id="init35" class="init__checkbox" type="checkbox"><label for="init35" class="init__label"></label></div><div class="c"><input id="init36" class="init__checkbox" type="checkbox"><label for="init36" class="init__label"></label></div><div class="c"><input id="init37" class="init__checkbox" type="checkbox"><label for="init37" class="init__label"></label></div><div class="c"><input id="init38" class="init__checkbox" type="checkbox"><label for="init38" class="init__label"></label></div><div class="c"><input id="init39" class="init__checkbox" type="checkbox"><label for="init39" class="init__label"></label></div><div class="c"><input id="init40" class="init__checkbox" type="checkbox"><label for="init40" class="init__label"></label></div><div class="c"><input id="init41" class="init__checkbox" type="checkbox"><label for="init41" class="init__label"></label></div><div class="c"><input id="init42" class="init__checkbox" type="checkbox"><label for="init42" class="init__label"></label></div><div class="c"><input id="init43" class="init__checkbox" type="checkbox"><label for="init43" class="init__label"></label></div><div class="c"><input id="init44" class="init__checkbox" type="checkbox"><label for="init44" class="init__label"></label></div><div class="c"><input id="init45" class="init__checkbox" type="checkbox"><label for="init45" class="init__label"></label></div><div class="c"><input id="init46" class="init__checkbox" type="checkbox"><label for="init46" class="init__label"></label></div><div class="c"><input id="init47" class="init__checkbox" type="checkbox"><label for="init47" class="init__label"></label></div><div class="c"><input id="init48" class="init__checkbox" type="checkbox"><label for="init48" class="init__label"></label></div></div>
+				><div class="c"><input id="init0" class="init__checkbox" type="checkbox"><label for="init0" class="init__label square"></label></div><div class="c"><input id="init1" class="init__checkbox" type="checkbox"><label for="init1" class="init__label square"></label></div><div class="c"><input id="init2" class="init__checkbox" type="checkbox"><label for="init2" class="init__label square"></label></div><div class="c"><input id="init3" class="init__checkbox" type="checkbox"><label for="init3" class="init__label square"></label></div><div class="c"><input id="init4" class="init__checkbox" type="checkbox"><label for="init4" class="init__label square"></label></div><div class="c"><input id="init5" class="init__checkbox" type="checkbox"><label for="init5" class="init__label square"></label></div><div class="c"><input id="init6" class="init__checkbox" type="checkbox"><label for="init6" class="init__label square"></label></div><div class="c"><input id="init7" class="init__checkbox" type="checkbox"><label for="init7" class="init__label square"></label></div><div class="c"><input id="init8" class="init__checkbox" type="checkbox"><label for="init8" class="init__label square"></label></div><div class="c"><input id="init9" class="init__checkbox" type="checkbox"><label for="init9" class="init__label square"></label></div><div class="c"><input id="init10" class="init__checkbox" type="checkbox"><label for="init10" class="init__label square"></label></div><div class="c"><input id="init11" class="init__checkbox" type="checkbox"><label for="init11" class="init__label square"></label></div><div class="c"><input id="init12" class="init__checkbox" type="checkbox"><label for="init12" class="init__label square"></label></div><div class="c"><input id="init13" class="init__checkbox" type="checkbox"><label for="init13" class="init__label square"></label></div><div class="c"><input id="init14" class="init__checkbox" type="checkbox"><label for="init14" class="init__label square"></label></div><div class="c"><input id="init15" class="init__checkbox" type="checkbox"><label for="init15" class="init__label square"></label></div><div class="c"><input id="init16" class="init__checkbox" type="checkbox"><label for="init16" class="init__label square"></label></div><div class="c"><input id="init17" class="init__checkbox" type="checkbox"><label for="init17" class="init__label square"></label></div><div class="c"><input id="init18" class="init__checkbox" type="checkbox"><label for="init18" class="init__label square"></label></div><div class="c"><input id="init19" class="init__checkbox" type="checkbox"><label for="init19" class="init__label square"></label></div><div class="c"><input id="init20" class="init__checkbox" type="checkbox"><label for="init20" class="init__label square"></label></div><div class="c"><input id="init21" class="init__checkbox" type="checkbox"><label for="init21" class="init__label square"></label></div><div class="c"><input id="init22" class="init__checkbox" type="checkbox"><label for="init22" class="init__label square"></label></div><div class="c"><input id="init23" class="init__checkbox" type="checkbox"><label for="init23" class="init__label square"></label></div><div class="c"><input id="init24" class="init__checkbox" type="checkbox" checked><label for="init24" class="init__label square"></label></div><div class="c"><input id="init25" class="init__checkbox" type="checkbox"><label for="init25" class="init__label square"></label></div><div class="c"><input id="init26" class="init__checkbox" type="checkbox"><label for="init26" class="init__label square"></label></div><div class="c"><input id="init27" class="init__checkbox" type="checkbox"><label for="init27" class="init__label square"></label></div><div class="c"><input id="init28" class="init__checkbox" type="checkbox"><label for="init28" class="init__label square"></label></div><div class="c"><input id="init29" class="init__checkbox" type="checkbox"><label for="init29" class="init__label square"></label></div><div class="c"><input id="init30" class="init__checkbox" type="checkbox"><label for="init30" class="init__label square"></label></div><div class="c"><input id="init31" class="init__checkbox" type="checkbox"><label for="init31" class="init__label square"></label></div><div class="c"><input id="init32" class="init__checkbox" type="checkbox"><label for="init32" class="init__label square"></label></div><div class="c"><input id="init33" class="init__checkbox" type="checkbox"><label for="init33" class="init__label square"></label></div><div class="c"><input id="init34" class="init__checkbox" type="checkbox"><label for="init34" class="init__label square"></label></div><div class="c"><input id="init35" class="init__checkbox" type="checkbox"><label for="init35" class="init__label square"></label></div><div class="c"><input id="init36" class="init__checkbox" type="checkbox"><label for="init36" class="init__label square"></label></div><div class="c"><input id="init37" class="init__checkbox" type="checkbox"><label for="init37" class="init__label square"></label></div><div class="c"><input id="init38" class="init__checkbox" type="checkbox"><label for="init38" class="init__label square"></label></div><div class="c"><input id="init39" class="init__checkbox" type="checkbox"><label for="init39" class="init__label square"></label></div><div class="c"><input id="init40" class="init__checkbox" type="checkbox"><label for="init40" class="init__label square"></label></div><div class="c"><input id="init41" class="init__checkbox" type="checkbox"><label for="init41" class="init__label square"></label></div><div class="c"><input id="init42" class="init__checkbox" type="checkbox"><label for="init42" class="init__label square"></label></div><div class="c"><input id="init43" class="init__checkbox" type="checkbox"><label for="init43" class="init__label square"></label></div><div class="c"><input id="init44" class="init__checkbox" type="checkbox"><label for="init44" class="init__label square"></label></div><div class="c"><input id="init45" class="init__checkbox" type="checkbox"><label for="init45" class="init__label square"></label></div><div class="c"><input id="init46" class="init__checkbox" type="checkbox"><label for="init46" class="init__label square"></label></div><div class="c"><input id="init47" class="init__checkbox" type="checkbox"><label for="init47" class="init__label square"></label></div><div class="c"><input id="init48" class="init__checkbox" type="checkbox"><label for="init48" class="init__label square"></label></div></div>
 
-			<div id="generated" class="generated show-borders generated--animate">
-				<canvas id="c" ></canvas>
+			<div class="grid-group__canvases show-borders">
+				<canvas id="c" class="c-generated"></canvas>
 				<canvas id="c-inner-borders" class="c-inner-borders"></canvas>
 			</div>
 		</div><!-- / grid-group -->
@@ -254,7 +254,7 @@
 </div><!-- / outer-wrapper -->
 
 <div class="options-column">
-	
+
 	<button class="hide-options-button" data-hide-menu
 		><svg class="hide-options-button-svg" viewBox="0 0 100 100">
 			<polygon points="73,68.6 54.4,50 73,31.4 68.6,27 50,45.6 31.4,27 27,31.4 45.6,50 27,68.6 31.4,73 50,54.4 68.6,73 "/>
@@ -318,9 +318,12 @@
 
 </div>
 
-<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/min/jquery-2.1.4.min.js"><\/script>')</script>
-<script src="js/min/jquery.requestAnimationFrame.min.js"></script>
+<script
+	src="https://code.jquery.com/jquery-3.3.1.min.js"
+	integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+	crossorigin="anonymous"></script>
+
+<script>window.jQuery || document.write('<script src="js/min/jquery-3.3.1.min.js"><\/script>')</script>
 <script src="js/min/c-a-min.js"></script>
 </body>
 </html>

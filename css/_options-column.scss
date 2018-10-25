@@ -1,0 +1,123 @@
+.options-column {
+	background: #fff;
+	border-bottom: 1px solid #777;
+	border-left: 1px solid #777;
+	padding: 14px;
+	position: absolute;
+	top: 0;
+	right: 0;
+	transition: transform 1s;
+	transform: translateX(150px);
+	width: 150px;
+	z-index: 2;
+}
+
+@media (min-width: 700px) {
+	.options-column {
+		background: transparent;
+		border: 0;
+	}
+}
+
+.hide-options-button {
+	background: #fff;
+	border: 2px solid #4764ff;
+	border-radius: 17px;
+	float: right;
+	height: 34px;
+	margin: 0 0 25px 75px;
+	padding: 0;
+	width: 34px;
+	position: relative;
+	right: -4px;
+}
+
+.hide-options-button-svg {
+	width: 30px;
+	height: 30px;
+}
+
+/* (X) SVG */
+.hide-options-button-svg > polygon  {
+	fill: $options-button-color;
+}
+
+// HOVER STATE
+.hide-options-button:hover {
+	background: $options-button-hover-bg-color;
+	border-color: $options-button-hover-color;
+}
+
+// Need both for FF bug.
+.hide-options-button:hover polygon,
+.hide-options-button-svg:hover > polygon  {
+	fill: $options-button-hover-color
+}
+
+.show-instructions-button {
+	padding-top: 8px;
+}
+
+.show-instructions .show-instructions-button {
+	display: none;
+}
+
+.go-to-rule-group {
+	clear: both;
+	font-size: 15px;
+	margin: 20px 0 20px 0;
+}
+
+.go-to-rule-group .borderless-button {
+	margin: 6px 0;
+}
+
+.checkbox-options-group {
+	padding-bottom: 10px;
+}
+
+.checkbox-option {
+	padding: 0 0 15px 30px;
+	position: relative;
+}
+
+.options-column__external-link {
+	display: block;
+	font-size: 15px;
+	margin: 8px 0 15px 0;
+}
+
+.made-by {
+	font-size: 11px;
+	margin-top: 50px;
+}
+
+@media (max-aspect-ratio: 1/1) {
+	.limit-width-option {
+		display: none;
+	}
+}
+
+//
+//	---- SHOW-MENU STATE ----
+//
+
+.show-menu .options-column {
+	display: block;
+	transform: translateX(0);
+}
+
+/* Hide the "show" button when it's shown */
+.show-menu .more-options__button {
+	display: none;
+}
+
+//
+//	---- WARNINGS ----
+//
+
+.no-support-warning {
+	border-bottom: 1px solid #777;
+	margin: 0;
+	padding: 1em;
+}

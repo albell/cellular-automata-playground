@@ -1,0 +1,14 @@
+//
+// ---- MISC FINAL OVERRIDES ----
+//
+
+//	Hide focus outlines for mouse users.
+.tab-inactive * {
+	outline: 0;
+}
+
+input:invalid,
+input:out-of-range {
+	background: #ffe0e0;
+	border-color: #ff0000;
+}

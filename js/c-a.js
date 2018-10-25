@@ -2,38 +2,32 @@
 	"use strict";
 
 	// DOM ELEMENTS
-	var $window = $( w );
-	var $html = $( "html" );
-	var $header = $( "header" );
+	const $window = $( w );
+	const $html = $( "html" );
+	const $header = $( "header" );
 
-	var ruleCheckboxes = doc.getElementsByClassName( "rule__checkbox" );
+	const ruleCheckboxes = doc.getElementsByClassName( "rule__checkbox" );
 
-	var $ruleNumberNumeric = $( "#rule-number-numeric" );
-	var $ruleNumberSpan = $( ".rule-name-number" );
-	var $mirrorNumberSpan = $( ".mirror-rule-name-number" );
+	const $ruleNumberNumeric = $( "#rule-number-numeric" );
+	const $ruleNumberSpan = $( ".rule-name-number" );
+	const $mirrorNumberSpan = $( ".mirror-rule-name-number" );
 
-	var $ringLength = $( "#length" );
-	var $iteration = $( "#iteration" );
-	var $gridGroup = $( "#grid-group" );
-	var $initialState = $( "#initial-state" );
-	var initialStateEl = $initialState[ 0 ];
-
-	// Live nodelist is simpler than static jQuery nodelist.
-	var initCheckboxes = doc.getElementsByClassName( "init__checkbox" );
-
-	var generatedEl = doc.getElementById( "generated" );
-	var $generated = $( generatedEl );
-
-	var screenDpr = w.devicePixelRatio || 1;
+	const $ringLength = $( "#length" );
+	const $iteration = $( "#iteration" );
+	const $gridGroup = $( "#grid-group" );
+	const $initialState = $( "#initial-state" );
+	const initialStateEl = $initialState[ 0 ];
+	const initCheckboxes = doc.getElementsByClassName( "init__checkbox" );
+	const urlHashCheckbox = $( "#url-hash" );
+	const screenDpr = w.devicePixelRatio || 1;
 
 	var canvas = doc.getElementById( "c" );
 	var canvasMainCtx = canvas.getContext( "2d" );
 	var canvasBorders = doc.getElementById( "c-inner-borders" );
-	var canvasBordersCtx	= canvasBorders.getContext( "2d" );
+	var canvasBordersCtx = canvasBorders.getContext( "2d" );
 	var canvasBoxDevicePixels;
 	var canvasWidthDevicePixels;
 	var canvasHeightDevicePixels;
-	var urlHashCheckbox = $( "#url-hash" );
 	var ruleArray;
 	var initArray;
 	var lengthCount;
@@ -204,15 +198,18 @@
 			for ( i = 0; i < diff; i += 1 ) {
 				labelVal = "init" + ( lengthCount + i );
 				newCell = initCell.cloneNode( true );
-				newCell.innerHTML = "<input id='  + labelVal + ' class=init__checkbox " +
-					                  "type=checkbox>" +
-					                  "<label for=' + labelVal + ' class=init__label></label>";
+				newCell.innerHTML = "<input id='"  +
+					labelVal + "' class=init__checkbox " +
+					"type=checkbox>" +
+					"<label for='" +
+					labelVal +
+					"' class='init__label square'></label>";
 				addedCellsFrag.appendChild( newCell );
 			}
 
 			initialStateEl.appendChild( addedCellsFrag );
 
-		} else if ( diff < 0 ) { // Remove cell(s)
+		} else if ( diff < 0 ) { // Remove cell(s).
 
 			for ( i = 0; i > diff; i -= 1 ) {
 				last = initialStateEl.lastChild;
@@ -225,8 +222,8 @@
 
 	function genCell( prevLeft, prev, prevRight ) {
 		var concat = prevLeft.toString() +
-		             prev.toString() +
-		             prevRight.toString();
+			prev.toString() +
+			prevRight.toString();
 
 		// Get the "case" (a number 0 - 7)
 		var theCase = simpleMap[ concat ];
@@ -371,8 +368,8 @@
 		if ( opts.setUrlHash ) {
 			ignoreHashChange = true;
 			w.location.hash = "#rule=" + ruleAsBase2Str +
-			                  "&init=" + binArrayToBinStr( initArray ) +
-			                  "&iter=" + iterationCount;
+				"&init=" + binArrayToBinStr( initArray ) +
+				"&iter=" + iterationCount;
 		}
 	}
 
@@ -417,8 +414,8 @@
 
 		// Only set it if it has changed, to avoid touching the DOM.
 		if ( hashObj.rule &&
-		     hashObj.rule.length === 8 &&
-		     hashObj.rule !== ruleAsBase2Str ) {
+			hashObj.rule.length === 8 &&
+			hashObj.rule !== ruleAsBase2Str ) {
 			ruleAsBase2Str = hashObj.rule;
 			oldRuleNumber = ruleNumber; // Store for comparison
 			ruleNumber = base2StrToRuleNumber( ruleAsBase2Str );
@@ -504,7 +501,7 @@
 		// http://wolframscience.com/nksonline/pageimages/0053.gif
 		ruleNumber = base2StrToRuleNumber( getBase2StrFromRuleCheckboxes() );
 		$ruleNumberNumeric.val( ruleNumber )
-		                  .triggerHandler( "change" );
+			.triggerHandler( "change" );
 	} );
 
 	$ruleNumberNumeric.on( "change", function( event, previousRulePassed ) {
@@ -531,14 +528,14 @@
 		var oldRuleNumber = ruleNumber;
 		ruleNumber = mirrorRuleNumber;
 		$ruleNumberNumeric.val( mirrorRuleNumber )
-		                  .triggerHandler( "change", oldRuleNumber );
+			.triggerHandler( "change", oldRuleNumber );
 	} );
 
 	$( "[data-go-to-rule]" ).on( "click", function goToRule() {
 		var oldRuleNumber = ruleNumber;
 		ruleNumber = parseInt( $( this ).attr( "data-go-to-rule" ), 10 );
 		$ruleNumberNumeric.val( ruleNumber )
-		                  .triggerHandler( "change", oldRuleNumber );
+			.triggerHandler( "change", oldRuleNumber );
 	} );
 
 	// Wire big touch buttons to the numeric inputs
@@ -612,16 +609,15 @@
 		}
 
 		if ( ( e.which >  47 && e.which <  58 ) || // Number key
-		     ( e.which === 8 ) ) {                 // Delete key
+			( e.which === 8 ) ) {                 // Delete key
 			w.setTimeout( changeHandler, 0 );
-
-		// Don't fire a change event when the user is tabbing out.
-		// Arrow keys have their own change events directly so don't double-fire.
-		}	else if ( e.which ===  9 ||  // Tab
-			          e.which === 37 ||  // Left arrow
-					      e.which === 38 ||  // Up arrow
-					      e.which === 39 ||  // Right arrow
-					      e.which === 40 ) { // Down arrow
+		} else if ( e.which ===  9 ||  // Tab
+			// Don't fire a change event when the user is tabbing out.
+			// Arrow keys have their own change events directly so don't double-fire.
+			e.which === 37 ||  // Left arrow
+			e.which === 38 ||  // Up arrow
+			e.which === 39 ||  // Right arrow
+			e.which === 40 ) { // Down arrow
 			return; // Not false, still do the default action
 
 		} else { // Must be a letter key, or punctuation.
@@ -707,17 +703,8 @@
 		canvasBorders.classList.toggle( "c-inner-borders--hidden" );
 	} );
 
-	$( "#show-labels" ).on( "change", function() {
-		$generated.toggleClass( "show-counter" );
-	} );
-
 	$( "#limit-grid" ).on( "change", function() {
 		$gridGroup.toggleClass( "limit-grid-width" );
-	} );
-
-	$( "#animate-grid-refresh" ).on( "change", function() {
-		$generated.toggleClass( "generated--animate" );
-		opts.useAnimation = $( this ).prop( "checked" );
 	} );
 
 	urlHashCheckbox.on( "change", function() {
@@ -732,7 +719,7 @@
 			// http://stackoverflow.com/questions/1397329/how-to-remove-the-hash-from-
 			// window-location-with-javascript-without-page-refresh
 			if ( "replaceState" in history &&
-			     w.location.protocol.indexOf( "http" ) === 0 ) {
+				w.location.protocol.indexOf( "http" ) === 0 ) {
 				history.replaceState( "", doc.title, w.location.pathname + w.location.search );
 			} else {
 				w.location.hash = "";

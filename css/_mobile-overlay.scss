@@ -1,0 +1,19 @@
+// A transparent dark overlay, similar to a modal overlay, that clarifies the UI
+// on mobile where space is limited.
+
+.show-menu .mobile-overlay {
+	position: absolute;
+	background: #000;
+	opacity: .35;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	z-index: 1;
+}
+
+@media (min-width: 700px) {
+	.mobile-overlay {
+		display: none;
+	}
+}

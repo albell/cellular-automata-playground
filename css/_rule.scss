@@ -1,0 +1,108 @@
+.rules-wrapper {
+	display: flex;
+	padding: 20px 20px 20px 20px;
+}
+
+.rule {
+	border: 1px solid $border-gray-color;
+	flex: 1 1 auto;
+	//	http://stackoverflow.com/questions/26895349/how-can-i-get-ff-33-x-flexbox-behavior-in-ff-34-x
+	min-width: 0;
+}
+
+.rule + .rule { // All but the first
+	border-left: 0;
+}
+
+.rule__inner {
+	padding: 8%; // empirical
+}
+
+.rule__reference-row {
+	display: flex;
+}
+
+.rule__cell {
+	flex: 1 1 auto;
+	border: 1px solid $border-gray-color;
+
+	 + .rule__cell {
+		 border-left: 0;
+	}
+}
+
+//
+// Cells in the initial state.
+//
+.c {
+	flex: 1 1 auto;
+	position: relative;
+	margin: auto;
+}
+
+// Put borders on a pseudo element so that they don't interact with the "square"
+// padding-box sizing.
+.show-borders .c:after {
+	border: 1px solid $border-gray-color;
+	content: '';
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	top: 0;
+	left: 0;
+	pointer-events: none;
+}
+
+.show-borders .c + .c:after {
+	border-left-width: 0;
+}
+
+
+.c + .c > label { /* all but first */
+	border-left-width: 0;
+}
+
+.rule__box {
+	border: 1px solid $border-gray-color;
+	margin: 10% auto 0 auto;
+	position: relative;
+	width: 33%;
+}
+
+.rule-name {
+	padding: 10px 20px 20px;
+}
+
+.rule__checkbox,
+.init__checkbox {
+	border: 0;
+	box-sizing: border-box;
+	margin: 0;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	-moz-appearance: none;
+	-webkit-appearance: none;
+}
+
+.rule__label,
+.init__label {
+	display: block;
+	height: 0;
+	position: relative;
+	width: 100%;
+}
+
+.init__checkbox:focus,
+.init__checkbox:focus + label {
+	z-index: 20;
+}
+
+.rule__checkbox:checked + label,
+.init__checkbox:checked + label,
+.on,
+.on > div {
+	background: #000;
+}

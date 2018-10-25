@@ -1,0 +1,59 @@
+
+.main-menu-button {
+	background: transparent;
+	border: 0;
+	cursor: pointer;
+	float: right;
+	margin: 14px 10px;
+	padding: 0;
+	position: relative;
+	width: 34px;
+	z-index: 2;
+}
+
+.main-menu-button__circle {
+	background: #fff;
+	border: 2px solid #4764ff;
+	border-radius: 17px;
+	height: 34px;
+	width: 34px;
+}
+
+.main-menu-button__svg {
+	height: 30px;
+	width: 30px;
+}
+
+.main-menu-button__svg > polygon  {
+	fill: $options-button-color
+}
+
+.main-menu-button__menu-text {
+	color: #4764ff;
+	font-size: 8.5px;
+	padding-top: 4px;
+	text-align: center;
+	text-transform: uppercase;
+}
+
+// Hide text when menu is open
+.show-menu .main-menu-button__menu-text {
+	display: none;
+}
+
+// MENU BUTTON HOVER
+
+.main-menu-button:hover .main-menu-button__circle {
+	background: $options-button-hover-bg-color;
+	border-color: $options-button-hover-color;
+}
+
+// Need the button hover for FF bug.
+.main-menu-button:hover polygon,
+.main-menu-button__svg:hover > polygon {
+	fill: $options-button-hover-color
+}
+
+ .main-menu-button:hover .main-menu-button__menu-text {
+ color: $options-button-hover-color;
+}

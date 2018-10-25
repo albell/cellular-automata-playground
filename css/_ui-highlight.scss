@@ -1,0 +1,37 @@
+.reference-highlight,
+.rule__label,
+.initial-state {
+	// A zero-opacity box-shadow, just to create a transition effect
+	box-shadow: 0 0 5px 5px rgba(132, 177, 255, 0);
+	transition: box-shadow 1s;
+}
+
+.show-instructions .rule-reference-highlight,
+.show-instructions .rule__label {
+	box-shadow: 0 0 5px 5px rgba(132, 177, 255, 0.5); // BLUE
+}
+
+.show-instructions .initial-state-reference-highlight,
+.show-instructions .initial-state {
+	box-shadow: 0 0 5px 5px rgba(120, 255, 120, 0.5); // GREEN
+}
+
+.show-instructions .rule-reference-highlight,
+.show-instructions .initial-state-reference-highlight {
+	position: relative;
+	z-index: -1; // Put text box highlights behind adjacent text
+}
+
+.show-instructions .initial-state {
+	z-index: 1;
+	position: relative; // Keep green box-shadow on top of later rows
+}
+
+// Offset ugly outlines in Firefox only.
+@-moz-document url-prefix() {
+	input:focus,
+	button:focus {
+		outline: 3px dotted rgb(132, 177, 255);
+		outline-offset: 2x;
+	}
+}

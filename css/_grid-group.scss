@@ -1,0 +1,44 @@
+.grid-group {
+	margin: 0 auto;
+	max-width: 100%;
+	padding-bottom: 20px;
+	transition: max-width .4s ease;
+}
+
+// Tricky stuff here: don't let the inner-wrapper's border shrink the visualization.
+// This is to overlap the borders on the right and not see a double border.
+.show-menu .grid-group {
+	width:     calc(100% + 1px);
+	max-width: calc(100% + 1px);
+}
+
+.limit-grid-width.grid-group {
+	max-width: 100vh;
+}
+
+.initial-state {
+	display: flex;
+}
+
+.grid-group__canvases {
+	position: relative;
+}
+
+.generated {
+	border-color: transparent;
+	min-height: 150px; // Still need this?
+}
+
+// .generated--loading {
+// 	background: url("lib-img/loader-to-spin.svg") center 50px / 40px 40px no-repeat ;
+// }
+
+.c-inner-borders {
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.c-inner-borders--hidden {
+	display: none;
+}

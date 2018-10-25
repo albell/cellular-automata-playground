@@ -1,0 +1,70 @@
+.numeric-input-wrapper {
+	padding: 0 20px 0 14%;
+	text-align: left;
+}
+
+.numeric-input-group {
+	display: inline-block;
+	margin-bottom: 20px;
+	position: relative;
+	text-align: left;
+	width: 390px;
+	max-width: 100%;
+}
+
+.numeric-input-group--wider {
+	width: 450px;
+}
+
+.numeric-input-group + .numeric-input-group {
+ 	width: 305px; // just for iterations
+}
+
+.numeric-input-highlight {
+	display: inline-block;
+}
+
+.numeric-input,
+.minus-button,
+.plus-button {
+	background: #fff;
+	border: 1px solid gray;
+	display: inline-block;
+	font-size: 15px;
+	height: 34px;
+	position: relative;
+	vertical-align: middle;
+	width: 34px;
+	z-index: 1;
+}
+
+.numeric-input {
+	padding: 8px;
+	text-align: right;
+	width: 52px;
+}
+
+.minus-button,
+.plus-button {
+	border-left: 0;
+	cursor: pointer;
+}
+
+.numeric-input:focus,
+.minus-button:focus,
+.plus-button:focus {
+	z-index: 2; /* Keep the full outline ring visible */
+}
+
+.minus-button:active,
+.plus-button:active {
+	background: #eee;
+}
+
+.numeric-input-text {
+	font-size: 18px;
+	padding: 6px 0 0 135px;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
